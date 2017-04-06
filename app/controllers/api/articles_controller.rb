@@ -5,7 +5,8 @@ class Api::ArticlesController < ApplicationController
   end
 
   def show
-    
+    Article.create_articles
+    redirect_to 'staticpages/root'
   end
 
   private
