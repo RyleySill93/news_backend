@@ -4,6 +4,10 @@ class Api::ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def show
+    
+  end
+
   private
   def article_params
     params.require(:article).permit(:categories)
