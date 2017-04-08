@@ -18,7 +18,7 @@ class Article < ApplicationRecord
   end
 
   def self.fetch_articles
-    sources = ['techcrunch', 'the-economist', 'espn', 'entertainment-weekly', 'associated-press']
+    sources = ['the-verge', 'the-economist', 'espn', 'entertainment-weekly', 'associated-press']
     all_articles = []
     sources.each do |src|
       response = Mechanize.new.get("https://newsapi.org/v1/articles?source=#{src}&apiKey=745723fdc5784cbe8a09c975af39d28e")
@@ -38,7 +38,7 @@ class Article < ApplicationRecord
   def self.tag_articles(src, articles)
     category = nil
     case src
-    when 'techcrunch'
+    when 'the-verge'
       category = 'Tech'
     when 'the-economist'
       category = 'Business'
