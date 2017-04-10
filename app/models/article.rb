@@ -6,7 +6,7 @@ class Article < ApplicationRecord
 
   def self.create_articles
     articles = Article.fetch_articles
-    articles.shuffle.take(15).each do |article|
+    articles.shuffle.take(75).each do |article|
       smmry = Article.create_smmry(article['url'])
       Article.create(url: article['url'],
                      smmry: smmry[1..-1],
